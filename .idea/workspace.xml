@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8411eab3-8662-4b13-9e08-5648629ebadb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/action-app_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,8 +15,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2661">
-              <caret line="254" column="52" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
+            <state relative-caret-position="476">
+              <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -31,9 +29,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
       </list>
     </option>
   </component>
@@ -154,8 +152,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2661">
-          <caret line="254" column="52" selection-start-line="254" selection-start-column="52" selection-end-line="254" selection-end-column="52" />
+        <state relative-caret-position="476">
+          <caret line="277" column="38" selection-start-line="277" selection-start-column="38" selection-end-line="277" selection-end-column="38" />
         </state>
       </provider>
     </entry>
