@@ -2,7 +2,7 @@
 hermes-python>=0.1.29
 grove.py>=0.6
 
-# More dependency goes here...if, you need um...
+# More dependency goes here...
 pyserial==3.2.1
 adafruit-blinka>=2.1.6
 adafruit-circuitpython-dotstar>=1.5.0

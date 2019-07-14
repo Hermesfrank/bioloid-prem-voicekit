@@ -252,7 +252,7 @@ class VoiceKit(object):
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "The humidity is {} percent".format(int(humidity)), "")
 
-    # --> Master callback function, triggered everytime an intent is recognized
+    # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self,hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'seeed:relay_on':
