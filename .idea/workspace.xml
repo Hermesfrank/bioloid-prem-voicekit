@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8411eab3-8662-4b13-9e08-5648629ebadb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,8 +15,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
+            <state relative-caret-position="272">
+              <caret line="238" column="50" lean-forward="true" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
+              <folding>
+                <element signature="e#48#88#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +155,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="245" lean-forward="true" selection-start-line="245" selection-end-line="245" />
+        <state relative-caret-position="272">
+          <caret line="238" column="50" lean-forward="true" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
+          <folding>
+            <element signature="e#48#88#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -236,9 +236,10 @@ class VoiceKit(object):
 
         # In Celsius
         temperature, _ = self.temperature_humidity_sensor.read()
+        temperature = ((temperature * 9) / 5) + 32
 
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "The temperature is {} degrees".format((((int(temperature)) * 9)/5) + 32), "")
+        hermes.publish_start_session_notification(intent_message.site_id, "The temperature is {} degrees".format(int(temperature)), "")
 
     def answer_humidity(self, hermes, intent_message):
         # terminate the session first if not continue
