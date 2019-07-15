@@ -67,7 +67,7 @@ class VoiceKit(object):
 
         self.relay = grove.grove_relay.Grove(12)
         self.temperature_humidity_sensor = grove.grove_temperature_humidity_sensor_sht3x.Grove()
-        self.ser = serial.Serial(port = '/dev/ttyUSB0', baudrate = 57600, timeout = 1)
+        self.ser = serial.Serial(port='/dev/ttyUSB0', baudrate=57600, timeout=1)
 
         # start listening to MQTT
         self.start_blocking()
@@ -238,7 +238,7 @@ class VoiceKit(object):
         temperature, _ = self.temperature_humidity_sensor.read()
 
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "The temperature is {} degrees".format(int(temperature)), "")
+        hermes.publish_start_session_notification(intent_message.site_id, "The temperature is {} degrees".format((((int(temperature)) * 9)/5) + 32), "")
 
     def answer_humidity(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -253,7 +253,7 @@ class VoiceKit(object):
         hermes.publish_start_session_notification(intent_message.site_id, "The humidity is {} percent".format(int(humidity)), "")
 
     # --> Master callback function, triggered every time an intent is recognized
-    def master_intent_callback(self,hermes, intent_message):
+    def master_intent_callback(self, hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
         if coming_intent == 'Hermesf:relay_on':
             self.relay_on(hermes, intent_message)
