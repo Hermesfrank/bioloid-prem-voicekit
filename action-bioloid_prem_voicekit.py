@@ -24,7 +24,6 @@ actions_leds.initialize_matrix()
 # Initialize basic neutral face
 actions_leds.initialize_face()
 
-
 CONFIG_INI = "config.ini"
 
 MQTT_IP_ADDR = "localhost"
@@ -142,11 +141,9 @@ class VoiceKit(object):
 
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
         # Smile
-        dots[16] = (0, 0, 0)
-        dots[24] = (255, 255, 255)
-        dots[31] = (255, 255, 255)
-        dots[23] = (0, 0, 0)
+        actions_leds.smile()
 
         # send command to bot
         self.ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
@@ -155,11 +152,8 @@ class VoiceKit(object):
         hermes.publish_start_session_notification(intent_message.site_id, "I am a proud robot", "")
 
         time.sleep(2)
-        # No expression
-        dots[16] = (255, 255, 255)
-        dots[24] = (0, 0, 0)
-        dots[31] = (0, 0, 0)
-        dots[23] = (255, 255, 255)
+        # Return to neutral face
+        actions_leds.straight_face()
 
     def relay_on(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -167,22 +161,18 @@ class VoiceKit(object):
         
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-        # self.relay.on()
-        # Smile
-        dots[16] = (0, 0, 0)
-        dots[24] = (255, 255, 255)
-        dots[31] = (255, 255, 255)
-        dots[23] = (0, 0, 0)
+
+        # First smile
+        actions_leds.smile()
+        # Then pound chest
         self.ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "I am a proud robot", "")
         time.sleep(1)
-        # No expression
-        dots[16] = (255, 255, 255)
-        dots[24] = (0, 0, 0)
-        dots[31] = (0, 0, 0)
-        dots[23] = (255, 255, 255)
+
+        # Return to neutral face
+        actions_leds.straight_face()
 
     def relay_off(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -190,20 +180,10 @@ class VoiceKit(object):
 
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-        # self.relay.off()
 
         # Wink
-        dots[61] = (0, 0, 0)
-        dots[62] = (0, 0, 0)
-        time.sleep(.05)
-        dots[53] = (0, 0, 0)
-        dots[54] = (0, 0, 0)
-        time.sleep(.05)
-        dots[53] = (255, 255, 255)
-        dots[54] = (255, 255, 255)
-        time.sleep(.05)
-        dots[61] = (255, 255, 255)
-        dots[62] = (255, 255, 255)
+        # Return to neutral face
+        actions_leds.wink()
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "I've turned the relay off", "")
@@ -238,6 +218,7 @@ class VoiceKit(object):
     def start_blocking(self):
         with Hermes(self.mqtt_address) as h:
             h.subscribe_intents(self.master_intent_callback).start()
+
 
 if __name__ == "__main__":
     VoiceKit()
