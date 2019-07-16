@@ -31,20 +31,20 @@ class Sensors(object):
         self.start_blocking()
     # --> Sub callback function, one per intent
 '''
-    def answer_temperature(hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
+def answer_temperature(hermes, intent_message):
+    # terminate the session first if not continue
+    hermes.publish_end_session(intent_message.session_id, "")
 
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+    # action code goes here...
+    print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-        # In Fahrenheit - note that this is a dual sensor, so this picks off the first output
-        temperature_humidity_sensor = grove.grove_temperature_humidity_sensor_sht3x.Grove()
-        temperature, _ = temperature_humidity_sensor.read()
-        temperature = ((temperature * 9) / 5) + 32
+    # In Fahrenheit - note that this is a dual sensor, so this picks off the first output
+    temperature_humidity_sensor = grove.grove_temperature_humidity_sensor_sht3x.Grove()
+    temperature, _ = temperature_humidity_sensor.read()
+    temperature = ((temperature * 9) / 5) + 32
 
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id,
+    # if need to speak the execution result by tts
+    hermes.publish_start_session_notification(intent_message.site_id,
                                               "The temperature in Fahrenheit is {} degrees".format(int(temperature)), "")
 '''        
     # --> Register callback function and start MQTT
