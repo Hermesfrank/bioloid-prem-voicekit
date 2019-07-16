@@ -5,6 +5,9 @@ from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 
+from subprocess import call
+
+
 import actions_sensors
 import actions_leds
 import actions_motions
@@ -53,7 +56,7 @@ class VoiceKit(object):
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-        os.system("sudo -u _snips-skills shutdown -h now")
+        call("sudo nohup shutdown -h now", shell=True)
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "Shutting down the system", "")
