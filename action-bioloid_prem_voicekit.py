@@ -56,10 +56,10 @@ class VoiceKit(object):
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-        call("sudo nohup shutdown -h now", shell=True)
+        # call("sudo nohup shutdown -h now", shell=True)
 
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "Shutting down the system", "")
+        hermes.publish_start_session_notification(intent_message.site_id, "Cannot shut down the system", "")
 
     # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self, hermes, intent_message):
