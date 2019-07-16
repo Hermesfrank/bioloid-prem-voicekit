@@ -10,11 +10,8 @@ import actions_leds
 import actions_motions
 
 import grove.grove_relay
-import grove.grove_temperature_humidity_sensor_sht3x
 import serial
 import time
-# import board
-# import adafruit_dotstar as dotstar
 
 # Using a DotStar 8x8 LED Matrix connected to digital pins 12 and 13 to make faces - see actions_leds module
 # Initialize face LED-matrix to all off
@@ -44,115 +41,12 @@ class VoiceKit(object):
             self.mqtt_address = MQTT_ADDR
 
         self.relay = grove.grove_relay.Grove(12)
-        self.temperature_humidity_sensor = grove.grove_temperature_humidity_sensor_sht3x.Grove()
         self.ser = serial.Serial(port='/dev/ttyUSB0', baudrate=57600, timeout=1)
 
         # start listening to MQTT
         self.start_blocking()
         
     # --> Sub callback function, one per intent
-
-#    def move_forward(self, hermes, intent_message):
-        # terminate the session first if not continue
-#        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
- #       print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-  #      self.ser.write(b'\xFF\x55\x01\xFE\x00\xFF')
-   #     self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
-
-        # if need to speak the execution result by tts
-    #    hermes.publish_start_session_notification(intent_message.site_id, "Going forward", "")
-
-    def move_back(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x02\xFD\x00\xFF')
-        self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "Backing up", "")
-
-    def turn_right(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x08\xF7\x00\xFF')
-        self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "Turning right", "")
-
-    def turn_left(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
-        self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "Turning left", "")
-
-    def do_handstand(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x18\xE7\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "I can do a handstand", "")
-
-    def do_pushup(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x14\xEB\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "I can do a pushup", "")
-
-    def pound_chest(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # Smile
-        actions_leds.smile()
-
-        # send command to bot
-        self.ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "I am a proud robot", "")
-
-        time.sleep(2)
-        # Return to neutral face
-        actions_leds.straight_face()
 
     def relay_on(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -198,17 +92,17 @@ class VoiceKit(object):
         elif coming_intent == 'Hermesf:move_forward':
             actions_motions.move_forward(hermes, intent_message)
         elif coming_intent == 'Hermesf:move_back':
-            self.move_back(hermes, intent_message)
+            actions_motions.move_back(hermes, intent_message)
         elif coming_intent == 'Hermesf:turn_left':
-            self.turn_left(hermes, intent_message)
+            actions_motions.turn_left(hermes, intent_message)
         elif coming_intent == 'Hermesf:turn_right':
-            self.turn_right(hermes, intent_message)
+            actions_motions.turn_right(hermes, intent_message)
         elif coming_intent == 'Hermesf:do_pushup':
-            self.do_pushup(hermes, intent_message)
+            actions_motions.do_pushup(hermes, intent_message)
         elif coming_intent == 'Hermesf:do_handstand':
-            self.do_handstand(hermes, intent_message)
+            actions_motions.do_handstand(hermes, intent_message)
         elif coming_intent == 'Hermesf:pound_chest':
-            self.pound_chest(hermes, intent_message)
+            actions_motions.pound_chest(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_temperature':
             actions_sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
