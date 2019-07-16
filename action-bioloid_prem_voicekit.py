@@ -5,7 +5,7 @@ from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 
-import sensors
+import actions_sensors
 
 import grove.grove_relay
 import grove.grove_temperature_humidity_sensor_sht3x
@@ -229,19 +229,6 @@ class VoiceKit(object):
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "I've turned the relay off", "")
 
-    def answer_humidity(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # Note, this is a dual sensor so picking off the second output
-        _, humidity = self.temperature_humidity_sensor.read()
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "The humidity is {} percent".format(int(humidity)), "")
-
     # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self, hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
@@ -264,9 +251,9 @@ class VoiceKit(object):
         elif coming_intent == 'Hermesf:pound_chest':
             self.pound_chest(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_temperature':
-            sensors.answer_temperature(hermes, intent_message)
+            actions_sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
-            sensors.answer_humidity(hermes, intent_message)
+            actions_sensors.answer_humidity(hermes, intent_message)
 
     # --> Register callback function and start MQTT
     def start_blocking(self):
