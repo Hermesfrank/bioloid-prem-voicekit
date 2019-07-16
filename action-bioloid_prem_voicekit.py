@@ -37,15 +37,27 @@ class VoiceKit(object):
             self.config = None
             self.mqtt_address = MQTT_ADDR
 
-        self.relay = grove.grove_relay.Grove(12)
-        self.ser = serial.Serial(port='/dev/ttyUSB0', baudrate=57600, timeout=1)
+#         self.relay = grove.grove_relay.Grove(12)
+#         self.ser = serial.Serial(port='/dev/ttyUSB0', baudrate=57600, timeout=1)
 
         # start listening to MQTT
         self.start_blocking()
         
     # --> Sub callback function, one per intent
 
-    # See actions_* for these callbacks
+    def relay_off(self, hermes, intent_message):
+        # terminate the session first if not continue
+        hermes.publish_end_session(intent_message.session_id, "")
+
+        # action code goes here...
+        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+        # Wink
+        # Return to neutral face
+        actions_leds.wink()
+
+        # if need to speak the execution result by tts
+        hermes.publish_start_session_notification(intent_message.site_id, "I've turned the relay off", "")
 
     # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self, hermes, intent_message):
