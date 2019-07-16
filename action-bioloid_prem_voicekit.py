@@ -53,7 +53,7 @@ class VoiceKit(object):
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-        os.system("sudo shutdown -h now")
+        os.system("sudo -u _snips-skills shutdown -h now")
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "Shutting down the system", "")
