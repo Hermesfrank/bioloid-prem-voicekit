@@ -229,20 +229,6 @@ class VoiceKit(object):
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "I've turned the relay off", "")
 
-    def answer_temperature(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # In Fahrenheit - note that this is a dual sensor, so this picks off the first output
-        temperature, _ = self.temperature_humidity_sensor.read()
-        temperature = ((temperature * 9) / 5) + 32
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "The temperature is {} degrees".format(int(temperature)), "")
-
     def answer_humidity(self, hermes, intent_message):
         # terminate the session first if not continue
         hermes.publish_end_session(intent_message.session_id, "")
@@ -280,7 +266,7 @@ class VoiceKit(object):
         elif coming_intent == 'Hermesf:ask_temperature':
             sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
-            self.answer_humidity(hermes, intent_message)
+            sensors.answer_humidity(hermes, intent_message)
 
     # --> Register callback function and start MQTT
     def start_blocking(self):
