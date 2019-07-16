@@ -18,34 +18,12 @@ import adafruit_dotstar as dotstar
 # Using a DotStar Digital LED Matrix with 64 LEDs connected to digital pins
 dots = dotstar.DotStar(board.D13, board.D12, 64, brightness=0.1)
 
-# Initialize matrix
+# Initialize face LED-matrix to all off
 actions_leds.initialize_matrix()
 
-# Fill in the dots with color
-# Left eye
-dots[49] = (255, 255, 255)
-dots[50] = (255, 255, 255)
-dots[57] = (255, 255, 255)
-dots[58] = (255, 255, 255)
-# Right eye
-dots[53] = (255, 255, 255)
-dots[54] = (255, 255, 255)
-dots[61] = (255, 255, 255)
-dots[62] = (255, 255, 255)
-# Main part of mouth
-dots[18] = (255, 255, 255)
-dots[19] = (255, 255, 255)
-dots[20] = (255, 255, 255)
-dots[21] = (255, 255, 255)
-dots[10] = (255, 255, 255)
-dots[11] = (255, 255, 255)
-dots[12] = (255, 255, 255)
-dots[13] = (255, 255, 255)
-# No expression
-dots[16] = (255, 255, 255)
-dots[17] = (255, 255, 255)
-dots[22] = (255, 255, 255)
-dots[23] = (255, 255, 255)
+# Initialize basic neutral face
+actions_leds.initialize_face()
+
 
 CONFIG_INI = "config.ini"
 
@@ -53,9 +31,9 @@ MQTT_IP_ADDR = "localhost"
 MQTT_PORT = 1883
 MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
+
 class VoiceKit(object):
     """Class used to wrap action code with mqtt connection
-        
        Please change the name referring to your application
     """
 
