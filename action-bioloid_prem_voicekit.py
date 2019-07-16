@@ -7,20 +7,18 @@ from hermes_python.ontology import *
 
 import actions_sensors
 import actions_leds
+import actions_motions
 
 import grove.grove_relay
 import grove.grove_temperature_humidity_sensor_sht3x
 import serial
 import time
-import board
-import adafruit_dotstar as dotstar
+# import board
+# import adafruit_dotstar as dotstar
 
-# Using a DotStar Digital LED Matrix with 64 LEDs connected to digital pins
-dots = dotstar.DotStar(board.D13, board.D12, 64, brightness=0.1)
-
+# Using a DotStar 8x8 LED Matrix connected to digital pins 12 and 13 to make faces - see actions_leds module
 # Initialize face LED-matrix to all off
 actions_leds.initialize_matrix()
-
 # Initialize basic neutral face
 actions_leds.initialize_face()
 
@@ -53,19 +51,20 @@ class VoiceKit(object):
         self.start_blocking()
         
     # --> Sub callback function, one per intent
-    def move_forward(self, hermes, intent_message):
+
+#    def move_forward(self, hermes, intent_message):
         # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
+#        hermes.publish_end_session(intent_message.session_id, "")
 
         # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+ #       print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
         # send command to bot
-        self.ser.write(b'\xFF\x55\x01\xFE\x00\xFF')
-        self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
+  #      self.ser.write(b'\xFF\x55\x01\xFE\x00\xFF')
+   #     self.ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
 
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "Going forward", "")
+    #    hermes.publish_start_session_notification(intent_message.site_id, "Going forward", "")
 
     def move_back(self, hermes, intent_message):
         # terminate the session first if not continue
@@ -169,6 +168,7 @@ class VoiceKit(object):
 
         # if need to speak the execution result by tts
         hermes.publish_start_session_notification(intent_message.site_id, "I am a proud robot", "")
+
         time.sleep(1)
 
         # Return to neutral face
@@ -196,7 +196,7 @@ class VoiceKit(object):
         elif coming_intent == 'Hermesf:relay_off':
             self.relay_off(hermes, intent_message)
         elif coming_intent == 'Hermesf:move_forward':
-            self.move_forward(hermes, intent_message)
+            actions_motions.move_forward(hermes, intent_message)
         elif coming_intent == 'Hermesf:move_back':
             self.move_back(hermes, intent_message)
         elif coming_intent == 'Hermesf:turn_left':

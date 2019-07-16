@@ -11,6 +11,8 @@ class Sensors(object):
 
        Please change the name referring to your application
     """
+
+
 def answer_temperature(hermes, intent_message):
     # terminate the session first if not continue
     hermes.publish_end_session(intent_message.session_id, "")
@@ -26,6 +28,7 @@ def answer_temperature(hermes, intent_message):
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id,
                                               "The temperature in Fahrenheit is {} degrees".format(int(temperature)), "")
+
 
 def answer_humidity(hermes, intent_message):
     # terminate the session first if not continue
