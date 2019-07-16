@@ -8,10 +8,7 @@ from hermes_python.ontology import *
 import actions_sensors
 import actions_leds
 import actions_motions
-
-import grove.grove_relay
-import serial
-import time
+import actions_chat
 
 # Using a DotStar 8x8 LED Matrix connected to digital pins 12 and 13 to make faces - see actions_leds module
 # Initialize face LED-matrix to all off
@@ -28,7 +25,7 @@ MQTT_ADDR = "{}:{}".format(MQTT_IP_ADDR, str(MQTT_PORT))
 
 class VoiceKit(object):
     """Class used to wrap action code with mqtt connection
-       Please change the name referring to your application
+       connection
     """
 
     def __init__(self):
@@ -48,47 +45,27 @@ class VoiceKit(object):
         
     # --> Sub callback function, one per intent
 
-    def relay_on(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-        
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # First smile
-        actions_leds.smile()
-        # Then pound chest
-        self.ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "I am a proud robot", "")
-
-        time.sleep(1)
-
-        # Return to neutral face
-        actions_leds.straight_face()
-
-    def relay_off(self, hermes, intent_message):
-        # terminate the session first if not continue
-        hermes.publish_end_session(intent_message.session_id, "")
-
-        # action code goes here...
-        print('[Received] intent: {}'.format(intent_message.intent.intent_name))
-
-        # Wink
-        # Return to neutral face
-        actions_leds.wink()
-
-        # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "I've turned the relay off", "")
+    # See actions_* for these callbacks
 
     # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self, hermes, intent_message):
         coming_intent = intent_message.intent.intent_name
-        if coming_intent == 'Hermesf:relay_on':
-            self.relay_on(hermes, intent_message)
-        elif coming_intent == 'Hermesf:relay_off':
-            self.relay_off(hermes, intent_message)
+
+        # chat
+        if coming_intent == 'Hermesf:when_born':
+            actions_chat.when_born(hermes, intent_message)
+        elif coming_intent == 'Hermesf:creator':
+            actions_chat.creator(hermes, intent_message)
+        elif coming_intent == 'Hermesf:belong_to':
+            actions_chat.belong_to(hermes, intent_message)
+        elif coming_intent == 'Hermesf:wink':
+            actions_chat.wink(hermes, intent_message)
+        elif coming_intent == 'Hermesf:smile':
+            actions_chat.smile(hermes, intent_message)
+        elif coming_intent == 'Hermesf:frown':
+            actions_chat.frown(hermes, intent_message)
+
+        # motions
         elif coming_intent == 'Hermesf:move_forward':
             actions_motions.move_forward(hermes, intent_message)
         elif coming_intent == 'Hermesf:move_back':
@@ -103,6 +80,8 @@ class VoiceKit(object):
             actions_motions.do_handstand(hermes, intent_message)
         elif coming_intent == 'Hermesf:pound_chest':
             actions_motions.pound_chest(hermes, intent_message)
+
+        # sensor reports
         elif coming_intent == 'Hermesf:ask_temperature':
             actions_sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
