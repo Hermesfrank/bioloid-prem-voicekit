@@ -6,6 +6,7 @@ from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 
 import actions_sensors
+import actions_leds
 
 import grove.grove_relay
 import grove.grove_temperature_humidity_sensor_sht3x
@@ -18,7 +19,7 @@ import adafruit_dotstar as dotstar
 dots = dotstar.DotStar(board.D13, board.D12, 64, brightness=0.1)
 
 # Initialize matrix
-dots.fill((0, 0, 0))
+actions_leds.initialize_matrix()
 
 # Fill in the dots with color
 # Left eye
