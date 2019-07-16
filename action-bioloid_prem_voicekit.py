@@ -10,6 +10,9 @@ import actions_leds
 import actions_motions
 import actions_chat
 
+import os
+
+
 # Using a DotStar 8x8 LED Matrix connected to digital pins 12 and 13 to make faces - see actions_leds module
 # Initialize face LED-matrix to all off
 actions_leds.initialize_matrix()
@@ -43,15 +46,17 @@ class VoiceKit(object):
     # --> Sub callback function, one per intent
 
     # placeholder
-    def dummy(self, hermes, intent_message):
+    def shutdown(self, hermes, intent_message):
         # terminate the session first if not continue
         hermes.publish_end_session(intent_message.session_id, "")
 
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+        os.system('shutdown /p /f')
+
         # if need to speak the execution result by tts
-        hermes.publish_start_session_notification(intent_message.site_id, "", "")
+        hermes.publish_start_session_notification(intent_message.site_id, "Shutting down the system", "")
 
     # --> Master callback function, triggered every time an intent is recognized
     def master_intent_callback(self, hermes, intent_message):
@@ -92,6 +97,10 @@ class VoiceKit(object):
             actions_sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
             actions_sensors.answer_humidity(hermes, intent_message)
+
+        # shutdown the RPi
+        elif coming_intent == 'Hermesf:shutdown':
+            self.shutdown(hermes, intent_message)
 
     # --> Register callback function and start MQTT
     def start_blocking(self):

@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8411eab3-8662-4b13-9e08-5648629ebadb" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions_chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions_chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/actions_leds.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions_leds.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +12,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="50" column="80" lean-forward="true" selection-start-line="50" selection-start-column="80" selection-end-line="50" selection-end-column="80" />
+            <state relative-caret-position="986">
+              <caret line="58" column="77" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
               <folding>
                 <element signature="e#48#88#0" expanded="true" />
               </folding>
@@ -26,14 +24,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actions_chat.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="513">
-              <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
-              <folding>
-                <element signature="e#48#84#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="751">
+              <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
             </state>
           </provider>
         </entry>
@@ -95,8 +90,8 @@
         <option value="$PROJECT_DIR$/actions_sensors.py" />
         <option value="$PROJECT_DIR$/actions_motions.py" />
         <option value="$PROJECT_DIR$/actions_leds.py" />
-        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
         <option value="$PROJECT_DIR$/actions_chat.py" />
+        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
       </list>
     </option>
   </component>
@@ -235,22 +230,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
+    <entry file="file://$PROJECT_DIR$/actions_chat.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="50" column="80" lean-forward="true" selection-start-line="50" selection-start-column="80" selection-end-line="50" selection-end-column="80" />
-          <folding>
-            <element signature="e#48#88#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="751">
+          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/actions_chat.py">
+    <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="87" column="32" lean-forward="true" selection-start-line="87" selection-start-column="32" selection-end-line="87" selection-end-column="32" />
+        <state relative-caret-position="986">
+          <caret line="58" column="77" selection-start-line="58" selection-start-column="77" selection-end-line="58" selection-end-column="77" />
           <folding>
-            <element signature="e#48#84#0" expanded="true" />
+            <element signature="e#48#88#0" expanded="true" />
           </folding>
         </state>
       </provider>
