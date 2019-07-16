@@ -4,10 +4,12 @@
 from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
+
+import sensors
+
 import grove.grove_relay
 import grove.grove_temperature_humidity_sensor_sht3x
 import serial
-
 import time
 import board
 import adafruit_dotstar as dotstar
@@ -234,7 +236,7 @@ class VoiceKit(object):
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-        # In Celsius
+        # In Fahrenheit - note that this is a dual sensor, so this picks off the first output
         temperature, _ = self.temperature_humidity_sensor.read()
         temperature = ((temperature * 9) / 5) + 32
 
@@ -248,6 +250,7 @@ class VoiceKit(object):
         # action code goes here...
         print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+        # Note, this is a dual sensor so picking off the second output
         _, humidity = self.temperature_humidity_sensor.read()
 
         # if need to speak the execution result by tts
@@ -275,7 +278,7 @@ class VoiceKit(object):
         elif coming_intent == 'Hermesf:pound_chest':
             self.pound_chest(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_temperature':
-            self.answer_temperature(hermes, intent_message)
+            sensors.answer_temperature(hermes, intent_message)
         elif coming_intent == 'Hermesf:ask_humidity':
             self.answer_humidity(hermes, intent_message)
 

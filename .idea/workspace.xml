@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8411eab3-8662-4b13-9e08-5648629ebadb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/sensors.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="238" column="50" lean-forward="true" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
+            <state relative-caret-position="519">
+              <caret line="282" column="56" lean-forward="true" selection-start-line="282" selection-start-column="56" selection-end-line="282" selection-end-column="56" />
               <folding>
                 <element signature="e#48#88#0" expanded="true" />
               </folding>
@@ -24,7 +25,26 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sensors.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="740">
+              <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+              <folding>
+                <element signature="e#132#168#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,17 +54,8 @@
       <list>
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/sensors.py" />
         <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/bioloid-prem-voicekit.iml" />
-        <option value="$PROJECT_DIR$/.idea/misc.xml" />
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/modules.xml" />
       </list>
     </option>
   </component>
@@ -105,7 +116,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1913" y="-7" width="1550" height="878" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16116248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -127,9 +137,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config.ini">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -153,10 +160,23 @@
     <entry file="file://$PROJECT_DIR$/snipsTools.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.ini">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sensors.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="740">
+          <caret line="49" column="51" lean-forward="true" selection-start-line="49" selection-start-column="51" selection-end-line="49" selection-end-column="51" />
+          <folding>
+            <element signature="e#132#168#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="238" column="50" lean-forward="true" selection-start-line="238" selection-start-column="50" selection-end-line="238" selection-end-column="50" />
+        <state relative-caret-position="519">
+          <caret line="282" column="56" lean-forward="true" selection-start-line="282" selection-start-column="56" selection-end-line="282" selection-end-column="56" />
           <folding>
             <element signature="e#48#88#0" expanded="true" />
           </folding>
