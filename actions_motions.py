@@ -113,6 +113,7 @@ def pound_chest(hermes, intent_message):
 
     # Smile
     actions_leds.smile()
+    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
