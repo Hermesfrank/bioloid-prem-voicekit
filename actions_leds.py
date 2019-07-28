@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import random
 import time
 import board
 import adafruit_dotstar as dotstar
@@ -13,6 +14,25 @@ class LEDs(object):
     """Class used to set up
        face LED-matrix animations
     """
+
+
+def initialize_pi_hat_LEDs
+    # Using a LED Respeaker 2-Mics Pi Hat with 3 LEDs connected to hardware SPI
+    chest = dotstar.DotStar(board.SCK, board.MOSI, 3, brightness=0.2)
+
+    # HELPERS
+    # a random color 0 -> 224
+    def random_color():
+        return random.randrange(0, 7) * 32
+
+    # MAIN LOOP
+    n_chest = len(chest)
+    while True:
+        # Fill each dot with a random color
+        for dot in range(n_chest):
+            chest[dot] = (random_color(), random_color(), random_color())
+
+        time.sleep(.25)
 
 
 def initialize_matrix():
