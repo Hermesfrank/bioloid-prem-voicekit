@@ -22,7 +22,7 @@ def move_forward(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x01\xFE\x00\xFF')
@@ -40,7 +40,7 @@ def move_back(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x02\xFD\x00\xFF')
@@ -57,7 +57,7 @@ def turn_right(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x08\xF7\x00\xFF')
@@ -74,9 +74,11 @@ def turn_left(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
+    ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
+    ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
     ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
     ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
 

@@ -26,12 +26,12 @@ def initialize_pi_hat_leds():
     # MAIN LOOP
     num = 1
     n_chest = len(chest)
-    while num < 25:
+    while num < 10:    # seqquence length
         # Fill each dot with a random bright
         for dot in range(n_chest):
             chest[dot] = (0, 0, random_bright())
         num = num + 1
-        time.sleep(.05)
+        time.sleep(.05)     # flicker length
     for dot in range(n_chest):
         chest[dot] = (0, 0, 255)
 
