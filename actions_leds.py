@@ -46,7 +46,7 @@ def initialize_breathe():
                 breathe[dot] = (0, 0, 255, bright)
                 bright = bright + 0.2
                 num = num + 1
-            time.sleep(.01)
+            time.sleep(.1)
 
 
 def initialize_matrix():
