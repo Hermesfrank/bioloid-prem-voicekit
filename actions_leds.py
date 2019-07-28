@@ -9,7 +9,7 @@ import adafruit_dotstar as dotstar
 # Using a DotStar Digital LED Matrix with 64 LEDs connected to digital pins
 dots = dotstar.DotStar(board.D13, board.D12, 64, brightness=0.1)
 # Using a Respeaker 2-Mics Pi Hat with its 3 APA102 LEDs connected to hardware SPI
-chest = dotstar.DotStar(board.SCK, board.MOSI, 3, brightness=0.1)
+chest = dotstar.DotStar(board.SCK, board.MOSI, 3, brightness=0.2)
 
 
 class LEDs(object):
@@ -31,7 +31,7 @@ def initialize_pi_hat_leds():
         for dot in range(n_chest):
             chest[dot] = (0, 0, random_color())
         num = num + 1
-        time.sleep(.1)
+        time.sleep(.05)
 
 
 def initialize_matrix():
