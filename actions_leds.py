@@ -19,20 +19,21 @@ class LEDs(object):
 
 
 def initialize_pi_hat_leds():
-    # a random color 0 -> 224
-    def random_color():
+    # a random bright 0 -> 224
+    def random_bright():
         return random.randrange(0, 7) * 32
 
     # MAIN LOOP
     num = 1
     n_chest = len(chest)
-    while num < 50:
-        # Fill each dot with a random color
+    while num < 25:
+        # Fill each dot with a random bright
         for dot in range(n_chest):
-            chest[dot] = (0, 0, random_color())
+            chest[dot] = (0, 0, random_bright())
         num = num + 1
         time.sleep(.05)
-
+    for dot in range(n_chest):
+        chest[dot] = (0, 0, 255)
 
 def initialize_matrix():
     dots.fill((0, 0, 0))
