@@ -17,7 +17,7 @@ class LEDs(object):
        face LED-matrix animations
     """
 
-"""
+
 def initialize_pi_hat_leds():
     # a random color 0 -> 224
     def random_color():
@@ -31,7 +31,7 @@ def initialize_pi_hat_leds():
             chest[dot] = (random_color(), random_color(), random_color())
 
         time.sleep(.25)
-"""
+
 
 def initialize_matrix():
     dots.fill((0, 0, 0))
