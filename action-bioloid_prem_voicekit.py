@@ -22,7 +22,10 @@ actions_leds.initialize_matrix()
 # Initialize basic neutral face
 actions_leds.initialize_face()
 # Initialize chest LEDs
-actions_leds.initialize_pi_hat_leds()
+# actions_leds.initialize_pi_hat_leds()
+# Initialize breathe LEDs
+actions_leds.initialize_breathe()
+
 
 CONFIG_INI = "config.ini"
 
