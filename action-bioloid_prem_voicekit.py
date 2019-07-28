@@ -21,10 +21,10 @@ import os
 actions_leds.initialize_matrix()
 # Initialize basic neutral face
 actions_leds.initialize_face()
+
+# Using the APA102 LEDs on the Respeaker 2-Mics Pi Hat to do some animation
 # Initialize chest LEDs
-# actions_leds.initialize_pi_hat_leds()
-# Initialize breathe LEDs
-actions_leds.initialize_breathe()
+actions_leds.initialize_pi_hat_leds()
 
 
 CONFIG_INI = "config.ini"
