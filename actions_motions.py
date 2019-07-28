@@ -22,6 +22,8 @@ def move_forward(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # send command to bot
     ser.write(b'\xFF\x55\x01\xFE\x00\xFF')
     # terminates action at one step
@@ -38,6 +40,8 @@ def move_back(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # send command to bot
     ser.write(b'\xFF\x55\x02\xFD\x00\xFF')
     ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
@@ -52,6 +56,8 @@ def turn_right(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x08\xF7\x00\xFF')
@@ -68,6 +74,8 @@ def turn_left(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # send command to bot
     ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
     ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
@@ -83,6 +91,8 @@ def do_handstand(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # send command to bot
     ser.write(b'\xFF\x55\x18\xE7\x00\xFF')
 
@@ -96,6 +106,8 @@ def do_pushup(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x14\xEB\x00\xFF')
@@ -111,7 +123,7 @@ def pound_chest(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    # Smile
+    # Smile and glitter
     actions_leds.smile()
     actions_leds.initialize_pi_hat_leds()
 

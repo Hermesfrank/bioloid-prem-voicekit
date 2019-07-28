@@ -13,6 +13,8 @@ def when_born(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id, "I was created in July of two thousand nineteen", "")
 
@@ -23,6 +25,8 @@ def creator(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id, "I was created by Papa Frank ", "")
@@ -35,6 +39,8 @@ def belong_to(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id, "I belong to Maxwell Walton Barron", "")
 
@@ -45,6 +51,8 @@ def wink(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id, "Sure, I can wink", "")
@@ -60,6 +68,8 @@ def smile(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # if need to speak the execution result by tts
     hermes.publish_start_session_notification(intent_message.site_id, "Sure, I can smile, watch me", "")
@@ -78,8 +88,10 @@ def frown(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # if need to speak the execution result by tts
-    hermes.publish_start_session_notification(intent_message.site_id, "Sure, I can frown if I am sad", "")
+    hermes.publish_start_session_notification(intent_message.site_id, "Sure, I will frown if I am sad", "")
 
     # frown
     time.sleep(1)
