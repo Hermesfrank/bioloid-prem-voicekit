@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8411eab3-8662-4b13-9e08-5648629ebadb" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/actions_leds.py" beforeDir="false" afterPath="$PROJECT_DIR$/actions_leds.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" beforeDir="false" afterPath="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,7 +12,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
@@ -24,7 +24,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/actions_leds.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -54,8 +54,8 @@
         <option value="$PROJECT_DIR$/actions_sensors.py" />
         <option value="$PROJECT_DIR$/actions_motions.py" />
         <option value="$PROJECT_DIR$/actions_chat.py" />
-        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
         <option value="$PROJECT_DIR$/actions_leds.py" />
+        <option value="$PROJECT_DIR$/action-bioloid_prem_voicekit.py" />
       </list>
     </option>
   </component>
@@ -198,6 +198,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/actions_leds.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/action-bioloid_prem_voicekit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -205,13 +212,6 @@
           <folding>
             <element signature="e#48#88#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/actions_leds.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="64" selection-start-line="11" selection-start-column="64" selection-end-line="11" selection-end-column="64" />
         </state>
       </provider>
     </entry>
