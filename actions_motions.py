@@ -80,6 +80,7 @@ def turn_left(hermes, intent_message):
     ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
     ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
     ser.write(b'\xFF\x55\x04\xFB\x00\xFF')
+    time.sleep(1)
     ser.write(b'\xFF\x55\x00\xFF\x00\xFF')
 
     # if need to speak the execution result by tts
