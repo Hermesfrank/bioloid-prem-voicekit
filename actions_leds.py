@@ -12,12 +12,10 @@ dots = dotstar.DotStar(board.D13, board.D12, 64, brightness=0.1)
 chest = dotstar.DotStar(board.SCK, board.MOSI, 3, brightness=0.05)
 
 
-
 class LEDs(object):
     """Class used to set up
        face LED-matrix animations
     """
-
 
 
 def initialize_pi_hat_leds():
@@ -30,10 +28,9 @@ def initialize_pi_hat_leds():
     while True:
         # Fill each dot with a random color
         for dot in range(n_chest):
-            chest[dot] = (0, 0, random_color())
+            chest[dot] = (random_color(), random_color(), random_color())
 
         time.sleep(.25)
-
 
 
 def initialize_matrix():

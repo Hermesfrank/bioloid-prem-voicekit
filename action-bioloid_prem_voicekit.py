@@ -5,7 +5,7 @@ from snipsTools import SnipsConfigParser
 from hermes_python.hermes import Hermes
 from hermes_python.ontology import *
 
-from subprocess import call
+# from subprocess import call
 
 
 import actions_sensors
@@ -13,7 +13,7 @@ import actions_leds
 import actions_motions
 import actions_chat
 
-import os
+# import os
 
 
 # Using a DotStar 8x8 LED Matrix connected to digital pins 12 and 13 to make faces - see actions_leds module
