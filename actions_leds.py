@@ -24,13 +24,14 @@ def initialize_pi_hat_leds():
         return random.randrange(0, 7) * 32
 
     # MAIN LOOP
+    num = 1
     n_chest = len(chest)
-    while True:
+    while num < 50:
         # Fill each dot with a random color
         for dot in range(n_chest):
             chest[dot] = (0, 0, random_color())
-
-        time.sleep(.5)
+        num = num + 1
+        time.sleep(.1)
 
 
 def initialize_matrix():
