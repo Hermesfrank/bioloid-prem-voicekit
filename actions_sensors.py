@@ -3,6 +3,7 @@
 
 from hermes_python.ontology import *
 import grove.grove_temperature_humidity_sensor_sht3x
+import actions_leds
 
 temperature_humidity_sensor = grove.grove_temperature_humidity_sensor_sht3x.Grove()
 
