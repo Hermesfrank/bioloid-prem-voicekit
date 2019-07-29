@@ -20,6 +20,8 @@ def answer_temperature(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
+    actions_leds.initialize_pi_hat_leds()
+
     # In Fahrenheit - note that this is a dual sensor, so this picks off the first output
 
     temperature, _ = temperature_humidity_sensor.read()
@@ -36,6 +38,8 @@ def answer_humidity(hermes, intent_message):
 
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
+
+    actions_leds.initialize_pi_hat_leds()
 
     # Note, this is a dual sensor so picking off the second output
     _, humidity = temperature_humidity_sensor.read()
