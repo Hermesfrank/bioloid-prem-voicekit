@@ -94,7 +94,7 @@ def do_handstand(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x18\xE7\x00\xFF')
@@ -110,7 +110,7 @@ def do_pushup(hermes, intent_message):
     # action code goes here...
     print('[Received] intent: {}'.format(intent_message.intent.intent_name))
 
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x14\xEB\x00\xFF')
@@ -128,7 +128,7 @@ def pound_chest(hermes, intent_message):
 
     # Smile and glitter
     actions_leds.smile()
-    actions_leds.initialize_pi_hat_leds()
+#    actions_leds.initialize_pi_hat_leds()
 
     # send command to bot
     ser.write(b'\xFF\x55\x21\xDE\x00\xFF')
